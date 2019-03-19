@@ -1,0 +1,23 @@
+@import './../../styles/vars'
+
+.cats
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	padding: 1rem
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+	@media screen and (max-width: 1199px)
+		max-width: 991px
+	&-wrapper
+		display: flex
+		align-items: center
+		justify-content: center
+		min-height: 100vh
+		padding: 1rem
+		overflow: hidden
+		position: relative

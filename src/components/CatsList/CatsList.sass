@@ -1,0 +1,188 @@
+@import '../../styles/vars'
+
+.cats-item
+	cursor: pointer
+	padding-top: 20px
+	height: 100%
+	&-filled
+		background: $blue
+		background: linear-gradient(135deg, transparent 31px, $blue 0)
+		-webkit-border-radius: 20px
+		-moz-border-radius: 20px
+		border-radius: 20px
+		padding: 4px
+		transition: all 0.3s linear
+		&.active
+			background: $pink
+			background: linear-gradient(135deg, transparent 31px, $pink 0) !important
+			.size
+				background: $pink !important
+			&:hover
+				background: $pink-hover
+				background: linear-gradient(135deg, transparent 31px, $pink-hover 0)  !important
+				.size
+					background: $pink-hover  !important
+	&-wrapper
+		//border: 4px solid $blue
+		-webkit-border-radius: 18px
+		-moz-border-radius: 18px
+		border-radius: 18px
+		transition: all 0.3s linear
+		position: relative
+		background: rgb(242, 242, 242)
+		background: linear-gradient(135deg, transparent 29px, rgb(242, 242, 242) 0)
+		overflow: hidden
+	&__excerpt, &__title, &__description
+		padding-left: 45px
+		padding-right: 45px
+	&__excerpt
+		font-size: 16px
+		font-family: $font-trebuchet
+		color: rgb(102, 102, 102)
+		@media screen and (max-width: 767px)
+			font-size: 13px
+	&__title
+		display: flex
+		flex-direction: column
+		&_big
+			font-size: 48px
+			font-family: $font-trebuchet
+			color: rgb(0, 0, 0)
+			font-weight: bold
+			line-height: 1.2
+			background-color: red
+		&_normal
+			font-size: 24px
+			font-family: $font-trebuchet
+			color: rgb(0, 0, 0)
+			font-weight: bold
+			line-height: 1.2
+	&__description
+		height: 96px
+		overflow: hidden
+		padding: 1rem 50px 2rem
+		li
+			font-size: 14px
+			font-family: $font-trebuchet
+			color: rgb(102, 102, 102)
+			line-height: 1.143
+
+
+.cats-list
+	background-color: transparent
+	margin-top: 1rem
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 100%
+	@media screen and (max-width: 1199px)
+		flex-wrap: wrap
+	.item-on-hover
+		cursor: pointer
+		transition: all 0.3s linear
+		&:hover
+			.cats-item-filled
+				background: $blue-hover
+				background: linear-gradient(135deg, transparent 31px, $blue-hover 0)
+			.size
+				background: $blue-hover
+			.cats-list__message_link
+				color: $blue-hover
+				&:after
+					background-position:  0 -3px
+	&__item
+		flex: 0 0 324px
+		max-width: 324px
+		position: relative
+		&:nth-child(2)
+			margin-left: 90px
+			margin-right: 90px
+			@media screen and (max-width: 1199px)
+				margin: 1rem 2rem
+		@media screen and (max-width: 1199px)
+			text-align: left
+			margin: 1rem 2rem
+		@media screen and (max-width: 767px)
+			max-width: 300px
+			flex: 0 0 300px
+		@media screen and (max-width: 359px)
+			max-width: 280px
+			flex: 0 0 280px
+		.disabled
+			pointer-events: none
+			.cats-item
+				opacity: 0.6
+			.cats-item-filled
+				background: lightgrey
+				background: linear-gradient(135deg, transparent 31px, lightgrey 0) !important
+			.cats-item__excerpt
+				color: lightgrey
+			.cats-list__message
+				color: rgb(255, 255, 102)
+			.cats-item__title
+				&_big, &_normal
+					color: lightgrey
+			.cats-item__description li
+				color: lightgrey
+			.size
+				background-color: grey !important
+	&__message
+		font-size: 13px
+		font-family: $font-trebuchet
+		color: rgb(255, 255, 255)
+		margin-top: 1rem
+		text-align: center
+		&_link
+			color: $blue
+			font-size: 13px
+			font-family: $font-trebuchet
+			position: relative
+			transition: all 0.3s linear
+			&:hover
+				text-decoration: none
+			&:focus
+				color: $blue
+				text-decoration: none
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 2px
+				background: url('../../assets/img/spritesheet.png') no-repeat 0 0
+
+
+.cats-image
+	overflow: hidden
+	position: relative
+	max-height: 270px
+	.cat
+		transform: translateX(-1rem)
+
+.size
+	background-color: $blue
+	display: flex
+	flex-direction: column
+	justify-content: center
+	position: absolute
+	bottom: 15px
+	right: 15px
+	width: 85px
+	height: 85px
+	-webkit-border-radius: 50%
+	-moz-border-radius: 50%
+	border-radius: 50%
+	line-height: 1
+	transition: all 0.3s linear
+	&_digit, &_weight
+		font-family: $font-trebuchet
+		color: rgb(255, 255, 255)
+		text-align: center
+	&_digit
+		font-size: 42px
+	&_weight
+		font-size: 21px
+		
+.buy-status
+	display: none
